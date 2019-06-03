@@ -1,31 +1,66 @@
+
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <ul>
+        <router-link tag="li" to="/">Logo</router-link> 
+        <router-link tag="li" to="/home">home按钮</router-link>
+        <router-link tag="li" to="/chat">chat按钮</router-link>
+        <router-link tag="li" to="/text">text按钮</router-link>
+
+      </ul>
+
+     
     </div>
     <router-view />
+    <fot></fot>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  padding: 0;
+  margin: 0;
+}
+#nav{
+  width: 100%;
+  height: 80px;
+  background-color: antiquewhite;
+}
+#nav ul{
   text-align: center;
-  color: #2c3e50;
 }
-#nav {
-  padding: 30px;
+#nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  width: 200px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+ 
 }
+/* #nav ul li:hover{
+  background-color: aqua;
+} */
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+#nav li.router-link-exact-active {
+  background-color: aqua;
 }
 </style>
+<script>
+import fot from './components/footer/fot.vue'
+
+export default {
+  name:"app",
+  components: {fot,},
+  methods:{
+    
+  },
+  // components:{
+  //   "ft":Child
+  // }
+}
+
+</script>
+
+
